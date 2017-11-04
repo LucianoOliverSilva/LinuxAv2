@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "Informe o nome do arquivo: " ; 
+read arq
+
+if [ -f $arq ]
+then
+echo "Existe"
+else
+echo "Não existe"
+fi

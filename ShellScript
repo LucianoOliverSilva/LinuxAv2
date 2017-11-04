@@ -1,0 +1,66 @@
+Comando para instalar editor no linux : sudo apt-get install gedit 
+
+
+
+Comandos => Shel Script
+
+Para criar um arquivo via terminal, basta abrir o mesmo e digitar:
+
+vi exemplo1.sh
+
+Também podemos fazer:
+
+ touch exemplo1.sh 
+
+O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre.
+
+ Posteriormente é possível abri-lo com um editor de sua preferência.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxx /////// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Para executar um script deve-se primeiro torna-lo executavel :
+
+Ex: digitar chmod +x olamundo.sh
+
+Podendo assim executar o script  da seguinte forma ./olamundo.sh
+
+Exemplo de um script shel para mostrar o nome :
+
+   #!/bin/bash
+   # leitura interativa de uma variável
+   echo "Entre com seu nome:"
+   read NOME // variavel temporaria nome
+   # mostra o valor lido
+   echo “O nome dado foi: $NOME” // imprimindo na tela o conteudo da variavel
+                                    temporaria
+
+Exmplo de script :
+
+Escreva um script que (criapasta.sh):
+
+1 - pergunte seu nome e :
+2 - crie uma pasta com o nome inserido e…
+3 - dentro da pasta crie 3 arquivos com extensão .txt e inicia com o nome inserido + a sequencia 1, 2 e 3. ex.: alex1.txt, alex2.txt e alex3.txt
+
+R:
+    #/bin/bash	
+    echo " Qual o seu nome:"
+    read NOME
+    mkdir "$NOME"
+    cd $NOME
+    touch "$NOME"{1,2,3}.txt
+    ls
+
+  
+Exemplo de Script que testa se um arquivo existe : 
+
+#!/bin/sh
+echo "Informe o nome do arquivo: " ; 
+read arq
+
+if [ -f $arq ]
+then
+echo "Existe"
+else
+echo "Não existe"
+fi
