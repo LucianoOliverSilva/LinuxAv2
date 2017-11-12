@@ -1,0 +1,175 @@
+
+
+Modifique o script para aceitar
+o nome do arquivo por parâmetro na linha de comando. 
+Se o arquivo não existir, o script deverá criá-lo
+ e enviar a mensagem “arquivo (nomedoarquivo) criado”
+
+
+#!/bin/bash
+
+if [ -f "meuarq.txt" ]
+
+then
+
+   echo -e "Arquivo meuarq.txt existe ... "
+
+fi
+
+Respota : 
+
+#!/bin/bash
+
+if [ -f $arq ]
+
+then
+
+   echo -e "Arquivo $arq existe ... "
+else
+
+   touch $arq
+   echo -e "Arquivo $arq criado..."
+   ls
+
+fi
+
+
+xxxxxxxxxxxxxxxx  // xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Comandos para testes de arquivos
+
+-e file : verifica se existe
+
+-d file : verifica se e um diretorio
+
+-f file : verifica se e um arquivo
+
+-s file : verifica se o arquivo nao esta vazio
+
+-g file : verifica se as definicoes no arquivo 
+          foram definidas de acordo 
+
+-u file : verifica se as definicoes no arquivo 
+          foram ajustadas
+
+-r file : verifica se o usuario tem permissao de leitura
+
+-w file : verifica se o usuario tem permissao de escrita
+
+-x file : verifica se o usuario tem permissao de execucao
+
+-nt file : verifica se e mais recente
+
+-ot file : verifica se e mais antigo
+
+-ef file : verifica se e igual
+
+-l file : verifica se e um link simbolico
+
+-o file : verifica se o dono do arquivo e o usuario que 
+esta executando
+
+xxxxxxxxxxxxxxxx  // xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Operadores para números
+
+-lt Verifica se é menor
+-gt Verifica se é maior
+-le Verifica se é menor ou igual
+-ge Verifica se é maior ou igual
+-eq Verifica se é igual
+-ne Verifica se é diferente
+
+xxxxxxxxxxxxxxxx  // xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Operadores para Texto Usa-se ” ” caso utilizar valor
+
+-n Verifica se não é nula
+-z Verifica se é nula
+!= Verifica se é diferente
+= Verifica se é igual
+
+xxxxxxxxxxxxxxxx  // xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Operador para logica
+
+! Logica NOT ou NÃO
+-o Logica OU, (OR) ou ||
+-a Logica E, (AND) ou &&
+
+xxxxxxxxxxxxxxxx  // xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Faça um script para receber um arquivo como parâmetro e se o arquivo estiver vazio,
+ excluí-lo seguido da mensagem, “arquivo xx excluído”.
+Senão, enviar mensagem “arquivo não pode ser excluído pois contém informações”
+se o arquivo não existir, emitir mensagem “arquivo inexiste”
+
+R:
+
+#!/bin/bash
+arq=$1
+
+if [ -f $arq ]
+then
+  if [ -s $arq ]
+  then
+    echo -e "arquivo não pode ser excluído pois contém inf$
+  else
+    rm $arq
+    echo -e "arquivo $arq excluído!!!"
+    ls
+  fi
+else
+  echo -e "arquivo inexistente!!"
+fi
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxx   /// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Script para testar se um arquivo existe caso nao exista sera criado.
+
+R:
+
+ #!/bin/bash
+arq=$1
+if [ -f $arq ]
+then
+   echo -e "arquivo existente..."
+else
+   echo -e "arquivo NAO existe e será criado......"
+   touch $arq
+   echo -e "arquivo $arq criado com sucesso!!"
+   ls
+fi
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxx   /// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Script para testar se o arquivo esta cheio ou vazio
+
+R:
+
+ #!/bin/bash
+arq=$1
+if [ -s $arq ]
+then
+   echo -e "cheio"
+else
+   echo -e "vazio"
+fi
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxx   /// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Script para testar maior ou menor
+
+R:
+
+#!/bin/bash
+arq=$1
+
+if [ 9 -gt 8 ] ; then
+  echo "maior"
+else
+  echo "menor"
+fi
+
+

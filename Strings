@@ -1,0 +1,41 @@
+
+#!/bin/bash
+
+for nomearq in $(ls)
+do
+    echo $nomearq
+done
+
+
+
+#!/bin/bash
+
+for nomearq in $(ls ~)
+do
+    echo $nomearq
+done
+
+
+#!/bin/bash
+
+for nomearq in $(ls)
+do
+  case $nomearq in
+    *.c)
+      echo $nomearq;;
+  esac
+done
+
+
+
+#!/bin/bash
+
+read nome
+if [ -z $nome ];then
+   echo "nome vazio"
+else
+   echo "string digitada = $nome"
+fi
+
+
+
