@@ -1,0 +1,107 @@
+Unilasalle-RJ - AV2
+Aluno:Luciano de Oliveira da Silva          Matricula: 0050006799
+Prova Av2 de Laboratorio de Sistemas Operacionais
+Professor: Alex Salgado
+2o. Semestre de 2017   Turno: Noite
+--------------------------------------------------
+1-(valor 1,5 pontos) Quantos erros tem no script abaixo? Qual(is) são eles?
+
+    R: ./questao.sh: linha 5: erro de sintaxe próximo do `token' não esperado `newline'
+       ./questao.sh: linha 5: `    *.txt}'
+
+
+case "$file" in
+
+  *.txt}
+        echo "É um arquivo de texto."
+        cat "$file"
+
+    *.gif|*.jpg|*.png}
+        echo "É uma figura."
+        xloadimage "$file"
+
+    *}
+        echo "Não sei que arquivo é esse."
+
+esac
+
+
+
+
+2-(valor 1,5 pontos) Crie um script chamado envia_github “mensagem”
+Este script deverá enviar todos os arquivos modificados para o github. 
+
+Com isso evita-se a necessidade de digitar todos os comando do git sempre que 
+quiser subir um arquivo para o repositorio Github.com
+
+R: #!/bin/bash
+
+   git init  
+
+   git add *
+
+   git commit -m  $1
+
+   git push
+
+
+
+
+3-(valor 2,0 pontos) Faça um script para receber um arquivo como parâmetro e se o arquivo 
+estiver vazio, excluí-lo seguido da mensagem, “arquivo xx excluído”.
+Senão, enviar mensagem “arquivo não pode ser excluído pois contém informações”
+Se o arquivo não existir, emitir mensagem “arquivo inexiste”
+
+R: #!/bin/bash
+   arq=$1
+
+   if [ -f $arq ]
+
+   then
+
+   if [ -s $arq ]
+
+   then
+       echo -e "arquivo não pode ser excluído pois contém informações"
+   else
+
+   rm $arq
+       echo -e "arquivo $arq excluído!!!"
+       ls
+   fi
+   else
+       echo -e "arquivo inexistente!!"
+   fi
+
+4-(valor 2,0 pontos) Usando estrutura de repetição, faça um script para calcular e exibir quantas
+pastas e quantos arquivos tem na pasta atual.
+
+
+
+   R: 
+
+   #!/bin/bash
+
+   for amostra  in $(ls .)
+
+   do
+   if [ -f $amostra ]
+   then
+   if [ ! -s $amostra ]
+   then
+   echo "$amostra"
+   fi
+   fi
+   done
+ 
+
+
+
+
+
+
+
+
+*******************
+Ao final, envie a sua resposta para o seu github e ṕreencha o form abaixo:
+https://goo.gl/forms/y1RjAKdrFAxg7X7H2
