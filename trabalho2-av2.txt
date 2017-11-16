@@ -1,0 +1,96 @@
+Aluno : Luciano de Oliveira da Silva
+
+Matricula : 0050006799
+
+1-Faça um script shell que receba um nome de arquivo como parametro e
+responde se este arquivo existe ou não.
+
+
+R: #!/bin/bash
+
+   file=$1
+
+     if [ -f $file ]
+
+     then
+
+     echo -e "O arquivo $file existe"
+
+     else
+ 
+     echo -e "O arquivo  $file nao existe"
+
+   fi
+
+
+2-Reescreva o codigo abaixo usando a estrutura for.
+
+
+#!/bin/bash
+ cont=$1
+ fat=1
+ while [ $cont -gt 0 ]
+ do
+ fat=$(( $fat * $cont ))
+ cont=$(( $cont - 1 ))
+ done
+ echo $fat
+
+R: 
+
+
+
+
+
+3-Usando estrutura de repetição, faça um script para exibir todos os arquivos
+da pasta atual com tamanho = 0kb (vazio).
+
+
+R:
+
+
+
+4-Usando estrutura de repetição, faça um script para ler a PASTA ATUAL,
+ calcular e exibir:
+
+- O total de arquivos lidos
+- O total de arquivos com a extensão .txt
+- O total de arquivos com a extensão .c
+- O total de arquivos com a extensão .py
+
+R:
+
+#!/bin/bash
+
+txt=0
+c=0
+py=0
+total=0
+
+for arq in $(ls .)
+do
+case "$arq" in
+    
+    *.txt)
+        txt=$(( $txt + 1 ))
+        total=$(( $total + 1 ))
+        ;;
+    *.c)
+        c=$(( $c + 1 )) 
+        total=$(( $total + 1 ))
+        ;;
+    *.py)
+        py=$(( $py + 1 ))
+        total=$(( $total + 1 ))
+        ;;
+    
+     *) 
+        ;;
+esac
+done
+echo "quantidade de arquivos TOTAL = $total"
+echo "quantidade de arquivos TXT = $txt"
+echo "quantidade de arquivos C = $c"
+echo "quantidade de arquivos PY = $py"
+
+
