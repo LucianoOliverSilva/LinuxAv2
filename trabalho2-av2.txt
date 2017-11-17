@@ -46,7 +46,20 @@ R:
 da pasta atual com tamanho = 0kb (vazio).
 
 
-R:
+R:  #!/bin/bash
+
+for arquivo in $(ls)
+do
+  if [ ! -s $arquivo ];
+  then
+  
+  echo "$arquivo possui 0Kb."
+  fi
+
+done
+
+
+
 
 
 
