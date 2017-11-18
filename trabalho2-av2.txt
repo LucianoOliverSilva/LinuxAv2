@@ -36,9 +36,21 @@ R: #!/bin/bash
  done
  echo $fat
 
-R: 
+R: #!/bin/bash
 
+cont=$1
 
+fat=1
+
+for (( i=1; i<=$cont; i++ ))
+
+do
+ 
+       fat=$(( $fat * $i ))
+
+done
+
+echo "O fatorial é $fat"
 
 
 
@@ -101,9 +113,12 @@ case "$arq" in
         ;;
 esac
 done
-echo "quantidade de arquivos TOTAL = $total"
-echo "quantidade de arquivos TXT = $txt"
-echo "quantidade de arquivos C = $c"
-echo "quantidade de arquivos PY = $py"
+echo "total de arquivos lidos : $total"
+echo "total de arquivos com a extensao .txt : $txt"
+echo "total de arquivos com a extensao .c :  $c"
+echo "total de arquivos com a extensao .py :  $py"
+
+
+
 
 
