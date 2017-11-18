@@ -71,10 +71,6 @@ do
 done
 
 
-
-
-
-
 4-Usando estrutura de repetição, faça um script para ler a PASTA ATUAL,
  calcular e exibir:
 
